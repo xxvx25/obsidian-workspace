@@ -1,0 +1,10 @@
+{
+  "name": "obsidian-workspace",
+  "version": "1.0.0",
+  "description": "Obsidian workspace",
+  "private": true,
+  "devDependencies": {
+    "textlint": "^15.1.0",
+    "textlint-rule-preset-ai-writing": "^1.1.0"
+  }
+}

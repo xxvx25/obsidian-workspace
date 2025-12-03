@@ -1,0 +1,168 @@
+{
+  "mcpServers": {
+    "zotero": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--directory",
+        "${ZOTERO_SCRIPTS_ROOT}",
+        "fastmcp",
+        "run",
+        "fastmcp.json",
+        "--transport",
+        "stdio"
+      ],
+      "env": {
+        "ZOTERO_SCRIPTS_ROOT": "${ZOTERO_SCRIPTS_ROOT}"
+      },
+      "autoStart": false,
+      "restartOnExit": false,
+      "timeout": 30000,
+      "usage_context": {
+        "primary_use": "academic_writing",
+        "estimated_tokens": "10k-15k",
+        "frequency": "medium",
+        "profiles": ["academic"],
+        "trigger": "explicit_only",
+        "description": "文献検索・引用生成が必要な時のみ起動"
+      }
+    },
+    "textlint": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--directory",
+        "${EXTERNAL_BRAIN_ROOT}",
+        "fastmcp",
+        "run",
+        "06_development/tools/mcp/textlint_fastmcp.json",
+        "--transport",
+        "stdio"
+      ],
+      "env": {
+        "EXTERNAL_BRAIN_ROOT": "${EXTERNAL_BRAIN_ROOT}",
+        "NODE_ENV": "production"
+      },
+      "autoStart": false,
+      "restartOnExit": false,
+      "timeout": 30000,
+      "usage_context": {
+        "primary_use": "quality_check",
+        "estimated_tokens": "5k-8k",
+        "frequency": "low",
+        "profiles": ["academic"],
+        "trigger": "explicit_only",
+        "description": "文章品質チェックが必要な時のみ起動",
+        "use_cases": [
+          "PDF出力前のチェック",
+          "論文提出前の品質確認",
+          "定期的なクオリティチェック"
+        ]
+      }
+    },
+    "tokyo-law-review": {
+      "command": "python",
+      "args": [".cursor/rules/u-tokto_law_review_style/tokyo_law_review_mcp_server.py"],
+      "env": {
+        "PYTHONPATH": "."
+      },
+      "autoStart": false,
+      "restartOnExit": false,
+      "timeout": 30000,
+      "usage_context": {
+        "primary_use": "citation_validation",
+        "estimated_tokens": "8k-12k",
+        "frequency": "low",
+        "profiles": ["academic"],
+        "trigger": "explicit_only",
+        "description": "引用スタイル検証が必要な時のみ起動"
+      }
+    },
+    "vdr-agent": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--directory",
+        "${EXTERNAL_BRAIN_ROOT}",
+        "python",
+        "06_development/agents/vdr_agent/run_mcp_server.py"
+      ],
+      "env": {
+        "EXTERNAL_BRAIN_ROOT": "${EXTERNAL_BRAIN_ROOT}"
+      },
+      "autoStart": false,
+      "restartOnExit": false,
+      "timeout": 60000,
+      "usage_context": {
+        "primary_use": "database_research",
+        "estimated_tokens": "12k-18k",
+        "frequency": "low",
+        "profiles": ["academic"],
+        "trigger": "explicit_only",
+        "description": "VPN経由で学術DBを検索する必要があるときのみ起動（要VPN資格・Zotero API設定）"
+      }
+    },
+    "obsidian": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--directory",
+        "${ZOTERO_SCRIPTS_ROOT}",
+        "python",
+        "scripts/obsidian_mcp_server.py"
+      ],
+      "env": {
+        "ZOTERO_SCRIPTS_ROOT": "${ZOTERO_SCRIPTS_ROOT}",
+        "EXTERNAL_BRAIN_ROOT": "${EXTERNAL_BRAIN_ROOT}"
+      },
+      "autoStart": false,
+      "restartOnExit": false,
+      "timeout": 30000,
+      "usage_context": {
+        "primary_use": "note_management",
+        "estimated_tokens": "5k-10k",
+        "frequency": "medium",
+        "profiles": ["academic", "writing"],
+        "trigger": "explicit_only",
+        "description": "Obsidianノートの作成・更新が必要な時のみ起動"
+      }
+    },
+    "chrome-devtools": {
+      "command": "npx",
+      "args": ["-y", "chrome-devtools-mcp@latest", "--headless"],
+      "autoStart": false,
+      "restartOnExit": false,
+      "timeout": 30000,
+      "usage_context": {
+        "primary_use": "web_development",
+        "estimated_tokens": "15k-20k",
+        "frequency": "low",
+        "profiles": ["development"],
+        "trigger": "explicit_only",
+        "description": "Web開発デバッグが必要な時のみ起動"
+      }
+    },
+    "serena": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/oraios/serena",
+        "serena",
+        "start-mcp-server",
+        "--context",
+        "codex"
+      ],
+      "autoStart": false,
+      "restartOnExit": false,
+      "timeout": 30000,
+      "usage_context": {
+        "primary_use": "codex_agent",
+        "estimated_tokens": "5k-10k",
+        "frequency": "low",
+        "profiles": ["development"],
+        "trigger": "explicit_only",
+        "description": "Codexベースエージェント用の長期間セッション管理"
+      }
+    }
+  }
+}

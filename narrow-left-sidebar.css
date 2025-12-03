@@ -1,0 +1,33 @@
+/* ===== 左サイドバー（File Explorer）の幅をぎゅっと縮める ===== */
+:root {
+  --my-sidebar-width: 180px;   /* ← 好きな幅に変えてOK */
+}
+
+/* Obsidian 1.5 以降の汎用セレクタ */
+.workspace-split.mod-left-split,
+.workspace-split.mod-left-split .workspace-tabs,
+.workspace-split.mod-left-split .workspace-tab-container,
+.workspace-split.mod-left-split .workspace-leaf {
+  width:  var(--my-sidebar-width) !important;
+  min-width: var(--my-sidebar-width) !important;
+  max-width: var(--my-sidebar-width) !important;
+}
+
+/* ===== ファイル名の文字サイズ＆行高を調整 ===== */
+.nav-file-title,
+.nav-folder-title {
+  font-size: 12px;          /* 文字サイズを小さめに */
+  line-height: 1.1;         /* 行間を詰める */
+  white-space: nowrap;      /* 折り返し禁止 */
+  overflow: hidden;         /* はみ出し隠す */
+  text-overflow: ellipsis;  /* 末尾に … */
+  max-width: calc(var(--my-sidebar-width) - 32px); /* アイコン分を差し引く */
+  padding-top: 2px;         /* 行高をさらに圧縮したい場合はここで調整 */
+  padding-bottom: 2px;
+}
+
+/* アイコンと文字の間隔を少し詰める（お好みで） */
+.nav-file-title::before,
+.nav-folder-title::before {
+  margin-right: 4px;
+}
