@@ -1,25 +1,35 @@
-# Obsidian Workspace Git Layout
+# Obsidian ワークスペース Git レイアウト
 
-This workspace is git-managed at the root to track config and orchestration files, while each vault is managed by its own repo. The goal is to keep note content and code repos separate and avoid cloud-sync issues.
+このリポジトリは、ワークスペース構成・ドキュメント・シンボリックリンクを最小限に管理するためのルートです。ノートコンテンツとコードは分離し、クラウド同期トラブルを避けることを目的としています。
 
-Repos
------
-- Root (this directory): tracks plan files, configs, symlinks, docs for the workspace.
-- knowledge-vault/: separate repo for the main Obsidian vault (ignored by root).
-- research-vault/: separate repo for the research vault (ignored by root).
+## ディレクトリ構造（概要）
+```
+/Users/tennigo/obs/
+├── docs/                     # ガイド・構成メモ・レポートを集約
+│   ├── guides/AGENTS.md      # コントリビュータガイド
+│   ├── workspace/ENVIRONMENT_STRUCTURE.md
+│   └── reports/*.md          # OneDrive等の調査・手順書
+├── archives/                 # アーカイブ済みファイル（例: バックアップzip）
+├── shell/                    # プロンプト設定など（例: starship.toml）
+├── projects -> /Users/tennigo/dev/projects
+├── knowledge-vault/          # 外部ボルト（別リポジトリ、ルートからは無視）
+├── research-vault/           # リサーチボルト（別リポジトリ、ルートからは無視）
+├── mcp-servers.json -> /Users/tennigo/dev/mcp-servers.json
+├── package.json -> /Users/tennigo/dev/package.json
+├── pnpm-lock.yaml -> /Users/tennigo/dev/pnpm-lock.yaml
+├── pyproject.toml -> /Users/tennigo/dev/pyproject.toml
+└── uv.lock -> /Users/tennigo/dev/uv.lock
+```
 
-Symlinks
---------
-- projects -> /Users/tennigo/dev/projects (code lives locally; cloudはリンクのみ)
-- mcp-servers.json, package.json, pnpm-lock.yaml, pyproject.toml, uv.lock -> /Users/tennigo/dev/
+## 運用方針
+- ボルト内ではなく、`/Users/tennigo/dev/projects/**` でインストール/ビルド/実行を行う。コード変更も各プロジェクトリポジトリ側で管理。
+- 重い成果物（`node_modules`、`.venv`、`env`、`dist`、`build`、`.cache`、`logs/`）は追跡しない。
+- 新しいボルトを追加する場合は独立リポジトリとして管理し、`.gitignore` に追加する。
+- ルート直下には設定・ドキュメント・シンボリックリンクのみを置き、その他の資料は `docs/` か `archives/` に整理する。
 
-Rules of thumb
---------------
-- Do installs/builds in `/Users/tennigo/dev/projects/**`, not inside vaults.
-- Keep heavy artifacts (`node_modules`, `.venv`, `env`, `dist`, `build`, `.cache`) out of the vaults.
-- If adding a new vault, manage it as its own git repo and add it to the root `.gitignore`.
-
-Refs
-----
-- /Users/tennigo/dev/plan.plan.md (reorg plan and log)
-- /Users/tennigo/dev/README.md (placement rules for dev/projects)
+## 参照ドキュメント
+- `docs/guides/AGENTS.md`：コントリビュータガイドと運用規約。
+- `docs/workspace/ENVIRONMENT_STRUCTURE.md`：環境構成と必須環境変数。
+- `docs/reports/`：OneDrive関連の調査記録・手順書。
+- `/Users/tennigo/dev/plan.plan.md`：再編成計画とログ。
+- `/Users/tennigo/dev/README.md`：`dev/projects` の配置ルール。
