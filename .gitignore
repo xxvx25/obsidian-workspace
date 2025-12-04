@@ -5,3 +5,6 @@ zsh-autosuggestions/
 knowledge-vault/
 research-vault/
 logs/
+virtual-files.txt
+missing-nonvirtual.txt
+*.zip
