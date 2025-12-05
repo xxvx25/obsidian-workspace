@@ -17,7 +17,12 @@
 			"**/.venv": true,
 			"**/__pycache__": true,
 			"**/.git": false
-		}
+		},
+		// Cursor Agent Review の言語設定
+		"cursor.aiReview.language": "ja",
+		"cursor.aiReview.locale": "ja-JP",
+		// VS Code の言語設定（Cursor でも使用される可能性がある）
+		"locale": "ja"
 	}
 }
 
