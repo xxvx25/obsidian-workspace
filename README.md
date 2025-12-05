@@ -27,6 +27,11 @@
 - 新しいボルトを追加する場合は独立リポジトリとして管理し、`.gitignore` に追加する。
 - ルート直下には設定・ドキュメント・シンボリックリンクのみを置き、その他の資料は `docs/` か `archives/` に整理する。
 
+## MCP設定ファイルの運用
+- **基準ファイル**: `mcp-servers.json`（シンボリックリンク、環境変数参照形式）
+- **ホスト固有設定**: `mcp-servers-TENのノートブックコンピュータ.json`（絶対パス指定）
+- 詳細は `docs/workspace/ENVIRONMENT_STRUCTURE.md` の「MCP設定ファイルの運用方針」を参照。
+
 ## 参照ドキュメント
 - `docs/guides/AGENTS.md`：コントリビュータガイドと運用規約。
 - `docs/workspace/ENVIRONMENT_STRUCTURE.md`：環境構成と必須環境変数。
