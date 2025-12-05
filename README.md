@@ -12,8 +12,8 @@
 ├── archives/                 # アーカイブ済みファイル（例: バックアップzip）
 ├── shell/                    # プロンプト設定など（例: starship.toml）
 ├── projects -> /Users/tennigo/dev/projects
-├── knowledge-vault/          # 外部ボルト（別リポジトリ、ルートからは無視）
-├── research-vault/           # リサーチボルト（別リポジトリ、ルートからは無視）
+├── knowledge-vault/          # 外部vault（別リポジトリ、ルートからは無視）
+├── research-vault/           # 研究用vault（別リポジトリ、ルートからは無視）
 ├── mcp-servers.json -> /Users/tennigo/dev/mcp-servers.json
 ├── package.json -> /Users/tennigo/dev/package.json
 ├── pnpm-lock.yaml -> /Users/tennigo/dev/pnpm-lock.yaml
@@ -53,6 +53,7 @@
 - サブモジュールの扱い: 平常時は除外（大規模）だが、必要なときはディレクトリを明示して絞る。  
   - 例: `rg "暗号資産" knowledge-vault/03\ Daily/202502*`  
   - 除外例: `rg "OneDrive" . --glob "!knowledge-vault/**" --glob "!research-vault/**"`
+- 研究テーマ関連の検索依頼をエージェントに行う場合は、`research-vault/` 配下（例: `03_thesis_draft/` や `02_literature_review/`）を明示して範囲指定する。通常の検索では両サブモジュールを除外する。
 - よく見る起点:  
   - 環境変数とレイアウト: `docs/workspace/ENVIRONMENT_STRUCTURE.md`  
   - 運用ガイド: `docs/guides/AGENTS.md`  
