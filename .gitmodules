@@ -1,6 +1,6 @@
 [submodule "knowledge-vault"]
 	path = knowledge-vault
-	url = https://xxvx25@github.com/xxvx25/knowledge-vault.git
+	url = git@github.com:xxvx25/knowledge-vault.git
 [submodule "research-vault"]
 	path = research-vault
-	url = https://xxvx25@github.com/xxvx25/research-vault.git
+	url = git@github.com:xxvx25/research-vault.git
