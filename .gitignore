@@ -1,8 +1,55 @@
+# macOS
 .DS_Store
+.AppleDouble
+.LSOverride
+
+# 依存関係とビルド成果物
 node_modules/
+.venv/
+venv/
+env/
+*.pyc
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+dist/
+build/
+*.egg-info/
+
+# 環境変数とシークレット
+.env
+.env.local
+.env.*.local
+*.env
+zotero.env.local
 zotero-mcp-env/
-zsh-autosuggestions/
+
+# ログと一時ファイル
 logs/
+*.log
 virtual-files.txt
 missing-nonvirtual.txt
+
+# アーカイブとバックアップ
 *.zip
+*.tar.gz
+*.bak.*
+.bak.*/
+
+# Obsidian設定（個人設定）
+.obsidian/
+.obsidian-workspace
+
+# キャッシュ
+.cache/
+.uv_cache/
+*.cache
+
+# その他
+zsh-autosuggestions/
+
+# Gitサブモジュール（初期化されていない場合の保護）
+# 注意: サブモジュールが正常に初期化されている場合、これらのエントリは無視されます
+# knowledge-vault/
+# research-vault/
