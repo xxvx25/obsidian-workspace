@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "./knowledge-vault"
+		},
+		{
+			"path": "./research-vault"
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"**/.DS_Store": true,
+			"**/node_modules": true,
+			"**/.venv": true,
+			"**/__pycache__": true,
+			"**/.git": false
+		}
+	}
+}
+
