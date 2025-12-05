@@ -22,15 +22,8 @@
 
 /Users/tennigo/dev/
 ├── projects/
-│   ├── code/                    # コードプロジェクト
-│   │   ├── zotero-scripts/
-│   │   ├── zotero-obsidian-pipeline/
-│   │   ├── powerpoint-generator/
-│   │   ├── receipt_ocr/
-│   │   ├── tax-stock-backtest/
-│   │   ├── ocr-evaluation/
-│   │   └── deepseek-ocr/
-│   └── tools/                   # bin/scripts/textlint-rules 等
+│   ├── code/                    # コードプロジェクト（deepseek-ocr, ocr-evaluation, tax-stock-backtest など）
+│   └── tools/                   # 共通ツール群（zotero-scripts, textlint-rules など）
 └── tools -> /Users/tennigo/dev/projects/tools
 ```
 
@@ -42,7 +35,7 @@
 
 **プロジェクト例**:
 - `/Users/tennigo/obs/` - textlint関連
-- `/Users/tennigo/dev/projects/code/zotero-scripts/` - textlint関連
+- `/Users/tennigo/dev/projects/tools/zotero-scripts/` - textlint関連
 
 **設定**:
 - PNPMストア: `~/.pnpm-store`（デフォルト）
@@ -53,10 +46,10 @@
 **管理方法**: 各プロジェクトで`uv`を使用
 
 **プロジェクト**:
-- `/Users/tennigo/dev/projects/code/zotero-scripts/` - `pyproject.toml`, `.venv/`
-- `/Users/tennigo/dev/projects/code/zotero-obsidian-pipeline/` - `pyproject.toml`, `.venv/`
-- `/Users/tennigo/dev/projects/code/powerpoint-generator/` - `venv/`（従来型）
+- `/Users/tennigo/dev/projects/tools/zotero-scripts/` - `pyproject.toml`, `.venv/`
+- `/Users/tennigo/dev/projects/tools/zotero-obsidian-pipeline/` - `pyproject.toml`, `.venv/`
 - `/Users/tennigo/dev/projects/code/tax-stock-backtest/` - `pyproject.toml`, `env/`
+- `/Users/tennigo/dev/projects/code/ocr-evaluation/` - `pyproject.toml`, `.venv/`
 
 ### 仮想環境の場所
 
@@ -72,7 +65,7 @@
 export EXTERNAL_BRAIN_ROOT="${HOME}/obs/knowledge-vault"
 
 # Zoteroスクリプトのルートディレクトリ
-export ZOTERO_SCRIPTS_ROOT="${HOME}/dev/projects/code/zotero-scripts"
+export ZOTERO_SCRIPTS_ROOT="${HOME}/dev/projects/tools/zotero-scripts"
 
 # OCR出力ディレクトリ
 export OCR_OUTPUT_DIR="${EXTERNAL_BRAIN_ROOT}/temp"

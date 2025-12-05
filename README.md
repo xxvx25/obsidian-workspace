@@ -33,3 +33,27 @@
 - `docs/reports/`：OneDrive関連の調査記録・手順書。
 - `/Users/tennigo/dev/plan.plan.md`：再編成計画とログ。
 - `/Users/tennigo/dev/README.md`：`dev/projects` の配置ルール。
+
+## リポジトリマップ（高速参照）
+- ルート: 設定と最小リンクのみ。重い成果物は置かない。
+- docs/: ガイド・環境構成・レポート  
+  - guides/AGENTS.md（運用ガイド）、workspace/ENVIRONMENT_STRUCTURE.md（レイアウトと環境変数）、reports/（命名規則: `YYYYMMDD_テーマ.md`）
+- archives/: バックアップや大容量の退避
+- shell/: プロンプト設定（例: starship.toml）
+- projects -> /Users/tennigo/dev/projects: コード系リポジトリ群（依存インストール・実行はここで）
+- knowledge-vault/（サブモジュール）: 個人ナレッジ
+- research-vault/（サブモジュール）: 研究ノート・論文ドラフト
+- mcp-servers.json / package.json / pnpm-lock.yaml / pyproject.toml / uv.lock: `/Users/tennigo/dev/` へのシンボリックリンク
+
+## 検索の推奨運用（範囲を絞って高速に）
+- まず範囲を決める: docs/ or reports/ など対象ディレクトリを限定。
+- ファイル名で絞る → 中身を検索:  
+  - `rg --files -g "2025*.md" docs/reports` → 対象確認  
+  - `rg "OneDrive" docs/reports`
+- サブモジュールの扱い: 平常時は除外（大規模）だが、必要なときはディレクトリを明示して絞る。  
+  - 例: `rg "暗号資産" knowledge-vault/03\ Daily/202502*`  
+  - 除外例: `rg "OneDrive" . --glob "!knowledge-vault/**" --glob "!research-vault/**"`
+- よく見る起点:  
+  - 環境変数とレイアウト: `docs/workspace/ENVIRONMENT_STRUCTURE.md`  
+  - 運用ガイド: `docs/guides/AGENTS.md`  
+  - OneDrive関連: `docs/reports/2025*.md`

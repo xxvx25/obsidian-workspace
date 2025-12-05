@@ -62,7 +62,7 @@
     },
     "tokyo-law-review": {
       "command": "python",
-      "args": [".cursor/rules/u-tokto_law_review_style/tokyo_law_review_mcp_server.py"],
+      "args": [".cursor/rules/u-tokyo_law_review_style/tokyo_law_review_mcp_server.py"],
       "env": {
         "PYTHONPATH": "."
       },
