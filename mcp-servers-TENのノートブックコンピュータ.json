@@ -13,7 +13,8 @@
         "stdio"
       ],
       "env": {
-        "ZOTERO_SCRIPTS_ROOT": "${ZOTERO_SCRIPTS_ROOT}"
+        "ZOTERO_SCRIPTS_ROOT": "/Users/tennigo/obs/projects/tools/zotero-scripts",
+        "UV_CACHE_DIR": "/Users/tennigo/obs/.uv_cache"
       },
       "autoStart": false,
       "restartOnExit": false,
@@ -31,17 +32,19 @@
       "command": "uv",
       "args": [
         "run",
+        "--no-project",
         "--directory",
         "${EXTERNAL_BRAIN_ROOT}",
         "fastmcp",
         "run",
-        "06_development/tools/mcp/textlint_fastmcp.json",
+        "tools/mcp/textlint_fastmcp.json",
         "--transport",
         "stdio"
       ],
       "env": {
-        "EXTERNAL_BRAIN_ROOT": "${EXTERNAL_BRAIN_ROOT}",
-        "NODE_ENV": "production"
+        "EXTERNAL_BRAIN_ROOT": "/Users/tennigo/obs/projects/tools/obsidian-scripts",
+        "NODE_ENV": "production",
+        "UV_CACHE_DIR": "/Users/tennigo/obs/.uv_cache"
       },
       "autoStart": false,
       "restartOnExit": false,
