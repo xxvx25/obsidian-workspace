@@ -9,7 +9,10 @@
 - [x] 問題なく動作したら `.bak.*` を削除するか、しばらく保管する ✅ バックアップ整理済み
 
 ## リポジトリ関連 TODO
-- [ ] `git status` の pending 変更を確認し、必要ならコミットする（例: `.gitignore`、`knowledge-vault` の変更）
-- [ ] `docs/reports` のリネーム変更をコミットして整理する
+- [x] `git status` の pending 変更を確認し、必要ならコミットする（例: `.gitignore`、`knowledge-vault` の変更）✅ 2025-12-06完了
+- [x] `docs/reports` のリネーム変更をコミットして整理する ✅ 変更なし（リネームは実施されていない）
+
+### 注意事項
+- `research-vault` サブモジュールにuntracked contentがあります。サブモジュール側で対応してください。
 
 詳細手順: `docs/reports/20251205_OneDrive再セットアップ手順.md`
