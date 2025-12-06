@@ -1,6 +1,6 @@
 # 環境構造と依存関係
 
-更新日: 2025-12-04
+更新日: 2025-12-05
 
 ## ディレクトリ構造
 
@@ -51,6 +51,30 @@
 - `/Users/tennigo/dev/projects/code/tax-stock-backtest/` - `pyproject.toml`, `env/`
 - `/Users/tennigo/dev/projects/code/ocr-evaluation/` - `pyproject.toml`, `.venv/`
 
+### グローバルCLIツール（npm）
+
+**管理方法**: npmでグローバルインストール
+
+**ツール**:
+- **Gemini CLI** (`@google/gemini-cli`): Google Gemini API用CLIツール
+  - インストール: `npm install -g @google/gemini-cli`
+  - バージョンアップ: `npm update -g @google/gemini-cli`
+  - 認証: `GEMINI_API_KEY`環境変数または`gemini config set api_key`
+- **Codex CLI** (`@openai/codex`): OpenAI Codex API用CLIツール
+  - インストール: `npm install -g @openai/codex@latest`
+  - バージョンアップ: `npm install -g @openai/codex@latest`
+  - 認証: ChatGPT Plus/Pro/Business/Edu/EnterpriseアカウントまたはOpenAI APIキー
+  - **Windows対応**: v0.22.0以降でWindowsサポートが改善（実験的サポート）
+  - **起動**: `codex` コマンドでインタラクティブなTUIセッションを開始
+  - **参考**: 
+    - [公式ドキュメント](https://developers.openai.com/codex/cli/)
+    - Windowsでのインストール手順: [Qiita記事](https://qiita.com/youtoy/items/57efea9238f07ac15f37)（v0.22.0で問題解決済み）
+  - **Cursorでの確認方法**:
+    - インストール確認スクリプト: `docs/scripts/check-codex-install.ps1` を実行
+    - `npm bin -g` の出力パスが環境変数PATHに含まれている必要があります
+    - インストール後、`codex --version` でバージョン確認
+    - Cursorを再起動して環境変数を再読み込み
+
 ### 仮想環境の場所
 
 - 各プロジェクト内に保持（`venv/`, `.venv/`, `env/`など）
@@ -96,3 +120,4 @@ export OCR_OUTPUT_DIR="${EXTERNAL_BRAIN_ROOT}/temp"
 
 - 2025-12-04: OneDrive切り離し、`/Users/tennigo/obs/` へ移行。`projects` 等は `/Users/tennigo/dev/` に集約しシンボリックリンクで参照。
 - 2025-12-05: `.gitignore`拡充、MCP設定ファイルの運用方針を明確化。
+- 2025-12-05: Gemini CLIとCodex CLIの依存関係情報を追加。
