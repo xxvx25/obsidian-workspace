@@ -48,6 +48,7 @@ missing-nonvirtual.txt
 
 # その他
 zsh-autosuggestions/
+TODO.md
 
 # Gitサブモジュール（初期化されていない場合の保護）
 # 注意: サブモジュールが正常に初期化されている場合、これらのエントリは無視されます
