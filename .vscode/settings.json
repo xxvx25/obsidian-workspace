@@ -1,0 +1,9 @@
+{
+	"git.detectSubmodules": true,
+	"git.autoRepositoryDetection": true,
+	"git.scanRepositories": [
+		".",
+		"./knowledge-vault",
+		"./research-vault"
+	]
+}
